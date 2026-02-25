@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Sign up</title>
+</head>
+<body>
+  <div class="container-header">
+    <h3 id="logo">MembersOnly.</h3>
+  </div>
+  <form action="/sign-up" method="POST">
+    <h2> Sign Up </h2>
+    <label class="form-label">
+      Username:
+      <input type="text" name="username" id="username" required>
+      <% if(errors && errors.length > 0) { %>
+        <% if(errors.find(err => err.path === "username")) { %>
+          <span class="error"> <%= errors.find(err => err.path === "username").msg %></span>
+        <% } %>
+      <% } %>
+    </label>
+    <label class="form-label">
+      First Name:
+      <input type="text" name="first_name" id="first_name" required>
+      <% if(errors && errors.length > 0) { %>
+        <% if(errors.find(err => err.path === "first_name")) { %>
+          <span class="error"> <%= errors.find(err => err.path === "first_name").msg %></span>
+        <% } %>
+      <% } %>
+    </label class="form-label">
+    <label class="form-label">
+      Last Name:
+      <input type="text" name="last_name" id="last_name" required>
+      <% if(errors && errors.length > 0) { %>
+        <% if(errors.find(err => err.path === "last_name")) { %>
+          <span class="error"> <%= errors.find(err => err.path === "last_name").msg %></span>
+        <% } %>
+      <% } %>
+    </label>
+    <label class="form-label">
+      Password:
+      <input type="password" name="password" id="password" required>
+      <% if(errors && errors.length > 0) { %>
+        <% if(errors.find(err => err.path === "password")) { %>
+          <span class="error"> <%= errors.find(err => err.path === "password").msg %></span>
+        <% } %>
+      <% } %>
+    </label>
+    <label class="form-label">
+      Confirm Password:
+      <input type="password" name="confirm_password" id="confirm_password" required>
+      <% if(errors && errors.length > 0) { %>
+        <% if(errors.find(err => err.path === "confirm_password")) { %>
+          <span class="error"> <%= errors.find(err => err.path === "confirm_password").msg %></span>
+        <% } %>
+      <% } %>
+    </label>
+    <button type="submit" class="submit-button"> Submit </button>
+  </form>
+  <p class="log-in-hint">
+    Have an account already? <a href="/log-in">Log in </a>
+  </p>
+</body>
+</html>

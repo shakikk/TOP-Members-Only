@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>New message</title>
+</head>
+<body>
+  <div class="container-header">
+    <h3 id="logo">MembersOnly.</h3>
+    <div>
+      <% if ( currentUser ) { %>
+        <p> Hi, <%= currentUser.username %> </p>
+        <a href="/log-out">Log out</a>
+      <% } else { %>
+      <a href="/log-in"> Log in </a>
+      <% } %>
+    </div>
+  </div>
+  <div>
+    <form action="/messages/newMessage" method="POST">
+      <h2> New Message </h2>
+      <label class="form-label">
+        Message Title:
+        <input type="text" name="message_title" id="message_title" maxlength="100">
+        <% if(errors && errors.length > 0) { %>
+          <% if(errors.find(err => err.path === "message_title")) { %>
+            <span class="error"> <%= errors.find(err => err.path === "message_title").msg %></span>
+          <% } %>
+        <% } %>
+      </label>
+      <label class="form-label">
+        Message Content:
+        <textarea name="message_content" id="message_content" maxlength="255"></textarea>
+        <% if(errors && errors.length > 0) { %>
+          <% if(errors.find(err => err.path === "message_content")) { %>
+            <span class="error"> <%= errors.find(err => err.path === "message_content").msg %></span>
+          <% } %>
+        <% } %>
+      </label>
+      <button type="submit" class="submit-button"> Submit </button>
+    </form>
+  </div>
+</body>
+</html>

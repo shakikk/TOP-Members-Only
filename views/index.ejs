@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Home</title>
+</head>
+<body>
+  <div class="container-header">
+    <h3 id="logo">MembersOnly.</h3>
+    <div>
+      <% if ( currentUser ) { %>
+        <p> Hi, <%= currentUser.username %> </p>
+        <a href="/log-out">Log out</a>
+      <% } else { %>
+      <a href="/log-in"> Log in </a>
+      <% } %>
+    </div>
+  </div>
+  <div class="members-card">
+    <% if (currentUser && currentUser.membership_status) { %>
+      <p> You are a member </p>
+      <% } %>
+  
+        <h3> Look at all our members! </h3>
+        <ol>
+          <% users.forEach(user => { %>
+            <% if (user.membership_status) { %>
+            <li>
+              <%= user.username %>
+            </li>
+            <% } %>
+          <% }) %>
+        </ol>
+  </div>
+  <% if ( currentUser ) { %>
+    <div class="new-message-card">
+      <a href="messages/newMessage"> New message </a>
+    </div>
+    <% } %>
+  <% if (messages && messages.length > 0) { %>
+    <% messages.forEach(message => { %>
+    <div class="message-card">
+      <h4> <%= message.message_title %> </h4>
+      <p> <%= message.message_content %> </p>
+      <% if (currentUser && currentUser.membership_status == true) { %>
+        <p> <%= message.username %> - <%=message.created_at %> </p>
+      <% } %>
+    </div>
+    <% }) %> 
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Sign up</title>
+</head>
+<body>
+  <div class="container-header">
+    <h3 id="logo">MembersOnly<a id="secret" href="/t3rce5">.</a></h3>
+  </div>
+  <form action="/log-in" method="POST">
+    <h2> Log In </h2>
+    <label class="form-label">
+      Username:
+      <input type="text" name="username" id="username">
+    </label>
+    <label class="form-label">
+      Password:
+      <input type="password" name="password" id="password">
+    </label>
+    <button type="submit" class="submit-button"> Submit </button>
+  </form>
+  <p class="log-in-hint">
+    Don't have an account? <a href="/sign-up"> Sign Up</a>!
+  </p>
+</body>
+</html>

@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*color: rgb(216, 216, 216);*/
+  color: rgb(97, 97, 97);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  display: grid;
+  gap: 14px;
+
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  
+  background: whitesmoke;
+}
+
+li{
+  list-style: none;
+}
+
+.container-main,
+.members-card,
+.message-card,
+.new-message-card{ 
+  padding: 20px 30px;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  border: 0.5px solid gray;
+}
+
+.members-card{
+  background-color: rgb(210, 221, 221);
+}
+
+.message-card{
+  max-width: 500px;
+  overflow-wrap: break-word;
+}
+
+.new-message-card{
+  padding: 8px;
+  background-color: azure;
+}
+
+.container-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  margin-bottom: 12px;
+}
+
+
+form{
+  display: grid;
+  place-content: center;
+  gap: 24px;
+
+  padding: 60px 10px;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  border: 0.5px solid gray;
+}
+
+.form-label{
+  display: grid;
+  gap: 6px;
+  justify-items: left;
+  max-width: 240px;
+}
+
+input, textarea{
+  border-radius: 8px;
+  border: 0.5px solid gray;
+  padding: 0 8px;
+  height: 36px;
+  width: 240px;
+
+  background-color: whitesmoke;
+}
+
+textarea{
+  padding: 8px;
+  resize: none;
+  min-height: 80px;
+}
+
+.submit-button{
+  font-weight: 700;
+  justify-self: start;
+  margin: 0 auto;
+
+  border-color: #455d7a;
+  background-color: whitesmoke;
+
+  border-radius: 8px;
+  border-width: 0.5px;
+  padding: 6px 24px;
+}
+
+.log-in-hint{
+  margin: 16px;
+}
+
+.error{
+  color: red;
+  font-size: 0.85rem;
+  text-align: left;
+}
