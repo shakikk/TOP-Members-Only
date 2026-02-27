@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+require('dotenv').config();
 const session = require("cookie-session");
 const passport = require("./db/passportConfig");
 const path = require("node:path");
@@ -23,7 +24,7 @@ app.use((req, res, next) => {
 app.use("/", userRouter);
 app.use("/messages", messageRouter);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, (error) => {
   if(error){
