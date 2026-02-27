@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 app.use("/", userRouter);
 app.use("/messages", messageRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, (error) => {
   if(error){
