@@ -26,7 +26,7 @@ app.use("/messages", messageRouter);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, (error) => {
+app.listen(PORT, "0.0.0.0", (error) => {
   if(error){
     throw(error);
   }
